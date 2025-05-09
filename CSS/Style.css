@@ -16,13 +16,13 @@
   font-size: 50px;
   font-family: "Roboto Mono", cursive;
   font-weight: 600;
-  margin-bottom: 5px; /* decrease space between h2 and p */
-  margin-left: 43%; /* decrease space between h2 and p */
+  margin-bottom: 5px; 
+  margin-left: 43%; 
 }
 
 .hero-section p {
   font-size: 30px;
   font-weight: 200;
   margin: 0;
-  margin-left: 45%; /* decrease space between h2 and p */
+  margin-left: 45%; 
 }
