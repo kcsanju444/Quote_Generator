@@ -31,6 +31,7 @@
     </nav>
   </header>
 
+  <!-- Main -->
   <main>
     <section id="home">
       <div class="home-container">
@@ -41,43 +42,49 @@
     </section>
 
     <section id="generate">
-        <div class="generate-container">
-          <div class="select">
-            <select onchange="categoryChange(this)" id="category-select" name="category" title="Category" class="category-select">
-              <option value="science">Science</option>
-              <option value="motivational">Motivational</option>
-              <option value="love">Love</option>
-              <option value="success">Success</option>
-              <option value="inspiration">Inspiration</option>
-            </select>
-          </div>
-          <p id="quote" class="quote">Loading...</p>
-          <p id="quoted-by">-- Author</p>
-  
-          <div class="buttons">
-            <div class="button-group">
-              <span>Font</span>
-              <div class="controllers">
-                <button class="button-transparent" onclick="fontChange('sub')" title="Font Decrease"><i class="fa-solid fa-minus"></i></button>
-                <button class="button-transparent" onclick="fontChange('add')" title="Font Increase"><i class="fa-solid fa-plus"></i></button>
-              </div>
-            </div>
-  
-            <button class="button" onclick="generateRandomQuote()" title="Random Quote">Random <i class="fa-solid fa-shuffle"></i></button>
-  
-            <div class="button-group">
-              <span>Change Quote</span>
-              <div class="controllers">
-                <button class="button-transparent" onclick="previousQuote()" title="Previous Quote"><i class="fa-solid fa-arrow-left"></i></button>
-                <button class="button-transparent" onclick="nextQuote()" title="Next Quote"><i class="fa-solid fa-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
-          <script src="JS/font-size.js"></script>
-          <script src="JS/copy-quote.js"></script>
-          <script type="module" src="JS/controller.js"></script>
-        
+      <div class="generate-container">
+        <div class="select">
+          <select onchange="categoryChange(this)" id="category-select" name="category" title="Category" class="category-select">
+            <option value="science">Science</option>
+            <option value="motivational">Motivational</option>
+            <option value="love">Love</option>
+            <option value="success">Success</option>
+            <option value="inspiration">Inspiration</option>
+          </select>
+        </div>
 
-       
+        <div class="copy-button">
+          <button onclick="copyQuote()" title="Copy Quote"><i class="fa-regular fa-clipboard"></i></button>
+        </div>
+
+        <p id="quote" class="quote">Loading...</p>
+        <p id="quoted-by">-- Author</p>
+
+        <div class="buttons">
+          <div class="button-group">
+            <span>Font</span>
+            <div class="controllers">
+              <button class="button-transparent" onclick="fontChange('sub')" title="Font Decrease"><i class="fa-solid fa-minus"></i></button>
+              <button class="button-transparent" onclick="fontChange('add')" title="Font Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+
+          <button class="button" onclick="generateRandomQuote()" title="Random Quote">Random <i class="fa-solid fa-shuffle"></i></button>
+
+          <div class="button-group">
+            <span>Change Quote</span>
+            <div class="controllers">
+              <button class="button-transparent" onclick="previousQuote()" title="Previous Quote"><i class="fa-solid fa-arrow-left"></i></button>
+              <button class="button-transparent" onclick="nextQuote()" title="Next Quote"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+    
+      <div id="toast-container"></div>
+    </section>
+  </main>
+
+  <script type="module" src="JS/controller.js"></script>
 </body>
 </html>
