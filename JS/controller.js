@@ -13,7 +13,30 @@ function displayQuote() {
   quoteText.innerText = current.quote;
   authorText.innerText = `-- ${current.author}`;
 }
-
-
+function generateRandomQuote() {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * selectedQuoteList.length);
+    } while (randomIndex === quoteIndex);
+    quoteIndex = randomIndex;
+    displayQuote();
+  }
+  
+  function nextQuote() {
+    quoteIndex = (quoteIndex + 1) % selectedQuoteList.length;
+    displayQuote();
+  }
+  
+  function previousQuote() {
+    quoteIndex = (quoteIndex - 1 + selectedQuoteList.length) % selectedQuoteList.length;
+    displayQuote();
+  }
+  
+  window.previousQuote = previousQuote;
+  window.nextQuote = nextQuote;
+  window.generateRandomQuote = generateRandomQuote;
+  window.categoryChange = categoryChange;
+  displayQuote();
+  
 
 
