@@ -1,90 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quote Generator</title>
-  
-  <!-- External Stylesheets -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/dark-mode.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-
-  <!-- Font Awesome & Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-  <link rel="icon" href="images/logo.png"/>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="#">Quote Generator</a>
-      <div class="toggle">
-        <i class="fa-regular fa-sun" title="Light Mode"></i>
-        <label class="toggle-switch" id="toggle-switch" title="toggle">
-          <input type="checkbox" />
-          <span class="slider"></span>
-        </label>
-        <i class="fa-regular fa-moon" title="Dark Mode"></i>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Main -->
-  <main>
-    <section id="home">
-      <div class="home-container">
-        <h2>Discover Inspiration Anytime</h2>
-        <p>Access a vast library of quotes in various genres</p>
-        <a href="#generate">Start Generating <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </section>
-
-    <section id="generate">
-      <div class="generate-container">
-        <div class="select">
-          <select onchange="categoryChange(this)" id="category-select" name="category" title="Category" class="category-select">
-            <option value="science">Science</option>
-            <option value="motivational">Motivational</option>
-            <option value="love">Love</option>
-            <option value="success">Success</option>
-            <option value="inspiration">Inspiration</option>
-          </select>
-        </div>
-
-        <div class="copy-button">
-          <button onclick="copyQuote()" title="Copy Quote"><i class="fa-regular fa-clipboard"></i></button>
-        </div>
-
-        <p id="quote" class="quote">Loading...</p>
-        <p id="quoted-by">-- Author</p>
-
-        <div class="buttons">
-          <div class="button-group">
-            <span>Font</span>
-            <div class="controllers">
-              <button class="button-transparent" onclick="fontChange('sub')" title="Font Decrease"><i class="fa-solid fa-minus"></i></button>
-              <button class="button-transparent" onclick="fontChange('add')" title="Font Increase"><i class="fa-solid fa-plus"></i></button>
-            </div>
-          </div>
-
-          <button class="button" onclick="generateRandomQuote()" title="Random Quote">Random <i class="fa-solid fa-shuffle"></i></button>
-
-          <div class="button-group">
-            <span>Change Quote</span>
-            <div class="controllers">
-              <button class="button-transparent" onclick="previousQuote()" title="Previous Quote"><i class="fa-solid fa-arrow-left"></i></button>
-              <button class="button-transparent" onclick="nextQuote()" title="Next Quote"><i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quote Generator</title>
     
-      <div id="toast-container"></div>
-    </section>
-  </main>
+    <link rel="stylesheet" href="CSS/Style.css" />
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+    <link rel="icon" href="images/logo.png"/>
+    </head>
+    <body>
+    <header>
+        <nav>
+        <a href="#">Quote Generator</a>
+        <div class="toggle">
+            <i class="fa-regular fa-sun" title="Light Mode"></i>
+            <label class="toggle-switch" id="toggle-switch" title="toggle">
+            <input type="checkbox" />
+            <span class="slider"></span>
+            </label>
+            <i class="fa-regular fa-moon" title="Dark Mode"></i>
+        </div>
+        </nav>
+    </header>
 
-  <script type="module" src="JS/controller.js"></script>
-</body>
-</html>
+    <main>
+        <section id="home">
+        <div class="home-container">
+            <h2>Inspire yourself at any moment</h2>
+            <p>"The path to greatness begins with a single courageous steplid fa-arrow-right"></i></a>
+        </div>
+        </section>
+
+        <section id="generate">
+        <div class="generate-container">
+            <div class="select">
+            <select onchange="categoryChange(this)" id="category-select" name="category" title="Category" class="category-select">
+                <option value="science">Science</option>
+                <option value="motivational">Motivational</option>
+                <option value="love">Love</option>
+                <option value="success">Success</option>
+                <option value="inspiration">Inspiration</option>
+            </select>
+            </div>
+
+            <div class="copy-button">
+            <button onclick="copyQuote()" title="Copy Quote"><i class="fa-regular fa-clipboard"></i></button>
+            </div>
+
+            <p id="quote" class="quote">Loading...</p>
+            <p id="quoted-by">-- Author</p>
+
+            <div class="buttons">
+            <div class="button-group">
+                <span>Font</span>
+                <div class="controllers">
+                <button class="button-transparent" onclick="fontChange('sub')" title="Font Decrease"><i class="fa-solid fa-minus"></i></button>
+                <button class="button-transparent" onclick="fontChange('add')" title="Font Increase"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <button class="button" onclick="generateRandomQuote()" title="Random Quote">Random <i class="fa-solid fa-shuffle"></i></button>
+
+            <div class="button-group">
+                <span>Change Quote</span>
+                <div class="controllers">
+                <button class="button-transparent" onclick="previousQuote()" title="Previous Quote"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="button-transparent" onclick="nextQuote()" title="Next Quote"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            </div>
+
+        
+        <div id="toast-container"></div>
+        </section>
+    </main>
+
+    <script type="module" src="JS/controller.js"></script>
+    </body>
+    </html>

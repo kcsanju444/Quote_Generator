@@ -1,28 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
 
-.hero-section {
-  background-image: url(../image/hero.jpg);
-  background-size: cover;      
-  background-position: center; 
-  height: 20rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+/* Header */
+header {
+  background: #4a90e2;
+  padding: 1rem 2rem;
   color: white;
 }
 
-.hero-section h2 {
-  font-size: 50px;
-  font-family: "Roboto Mono", cursive;
-  font-weight: 600;
-  margin-bottom: 5px; 
-  margin-left: 43%; 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero-section p {
-  font-size: 30px;
-  font-weight: 200;
-  margin: 0;
-  margin-left: 45%; 
+nav a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Toggle Switch */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #222;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+}
+
+.home-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.home-container h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-container p {
+  margin-bottom: 1rem;
+}
+
+.home-container a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.generate-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#quote {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  transition: font-size 0.2s ease-in-out;
+}
+
+#quoted-by {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.button,
+.button-transparent {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.button-transparent {
+  background: transparent;
+  color: #4a90e2;
+  border: 1px solid #4a90e2;
+}
+
+.button:hover,
+.button-transparent:hover {
+  background-color: #357ab8;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controllers {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.select {
+  margin-bottom: 1rem;
+}
+
+.category-select {
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+button,
+a {
+  transition: all 0.2s ease-in-out;
 }
