@@ -86,6 +86,7 @@ main {
 .category-select {
   padding: 0.6rem 8rem;
   font-size: 1rem;
+  text-align-last: center;
   text-align: center;
   align-items: center;
   border: 1px solid var(--border-color);
@@ -98,7 +99,8 @@ main {
   background-color: var(--button-color);
   color: var(--button-text);
   border: none;
-  margin-left: 32rem;
+    margin-left: 32rem;
+ 
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
@@ -157,4 +159,57 @@ main {
 .controllers {
   display: flex;
   gap: 0.5rem;
+}
+
+body.dark-mode {
+  background-color: #060706;
+  color: rgb(161, 12, 12);  
+  
+}
+
+.dark-mode header {
+  background-color: #212322;
+  color:white;
+}
+
+.dark-mode nav a,
+.dark-mode nav i {
+  color: rgb(161, 12, 12);
+}
+
+.dark-mode .home-container{
+    background-color: transparent;
+
+}
+.dark-mode .generate-container {
+  background-color: #212322;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+}
+
+.dark-mode .category-select{
+    color: black  
+
+}
+.dark-mode #quote,
+.dark-mode .button{
+  background-color: rgba(100, 8, 8, 0.248);
+  color: white;
+}
+.dark-mode .button-transparent,
+.dark-mode .button-group span,
+.dark-mode #quoted-by {
+  background-color: transparent;
+  color: white
+  ;
+}
+
+.dark-mode .button-transparent {
+  border: 1px solid white;
+}
+
+.dark-mode .copy-button button {
+  background-color: rgba(65, 4, 126, 0.4);
+  color: white;
+    margin-left: 32rem;
+ 
 }
