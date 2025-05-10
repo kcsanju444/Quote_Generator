@@ -206,7 +206,7 @@ body.dark-mode {
 }
 
 .dark-mode .copy-button button {
-  background-color: rgba(65, 4, 126, 0.4);
+  background-color: rgb(161, 12, 12);
   color: white;
   margin-left: 32rem;
 }

@@ -8,36 +8,39 @@ const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("quoted-by");
 const toggleSwitch = document.querySelector("#toggle-switch input");
 
-function displayQuote() {
-  const current = selectedQuoteList[quoteIndex];
-  quoteText.innerText = current.quote;
-  authorText.innerText = `-- ${current.author}`;
+function displayQuote(currentQuote) {
+  quoteText.innerText = currentQuote.quote;
+  authorText.innerText = `-- ${currentQuote.author}`;
 }
 
 function generateRandomQuote() {
   let randomIndex;
+  const randomQuotes = quotes; 
+
   do {
-    randomIndex = Math.floor(Math.random() * selectedQuoteList.length);
+    randomIndex = Math.floor(Math.random() * randomQuotes.length);
   } while (randomIndex === quoteIndex);
+
   quoteIndex = randomIndex;
-  displayQuote();
+  const currentQuote = randomQuotes[randomIndex];
+  displayQuote(currentQuote); 
 }
 
 function nextQuote() {
   quoteIndex = (quoteIndex + 1) % selectedQuoteList.length;
-  displayQuote();
+  displayQuote(selectedQuoteList[quoteIndex]);
 }
 
 function previousQuote() {
   quoteIndex = (quoteIndex - 1 + selectedQuoteList.length) % selectedQuoteList.length;
-  displayQuote();
+  displayQuote(selectedQuoteList[quoteIndex]);
 }
 
 function categoryChange(select) {
   selectedCategory = select.value;
   selectedQuoteList = quotes.filter(q => q.category === selectedCategory);
   quoteIndex = 0;
-  displayQuote();
+  displayQuote(selectedQuoteList[quoteIndex]);
 }
 
 function fontChange(action) {
@@ -67,4 +70,4 @@ window.categoryChange = categoryChange;
 window.copyQuote = copyQuote;
 window.fontChange = fontChange;
 
-displayQuote();
+displayQuote(selectedQuoteList[quoteIndex]);
